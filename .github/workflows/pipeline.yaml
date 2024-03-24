@@ -7,6 +7,7 @@ on:
 
 jobs:
   build:
+#    needs: job2
     runs-on: ubuntu-latest
 
     steps:
@@ -24,6 +25,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: Check style
+#      continue-on-error: true
       run: |
         pip install pycodestyle
         pycodestyle .
