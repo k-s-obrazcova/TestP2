@@ -27,7 +27,3 @@ jobs:
       run: |
         pip install pycodestyle
         pycodestyle .
-
-    - name: Build project
-      run: |
-        python main.py build
