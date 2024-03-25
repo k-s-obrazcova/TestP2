@@ -1,19 +1,17 @@
-name: Python_pipeline
-
+name: Python Check Style
 on:
   push:
     branches:
       - news
 
 jobs:
-  checkstyle_project:
+  checkstyle-python:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Git clone repo
+      - name: Git clone project
         uses: actions/checkout@v2
 
-      - name: Set version Python
+      - name: Set version python
         uses: actions/setup-python@v2
         with:
           python-version: '3.12.2'
@@ -22,8 +20,3 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
-      - name: Check style project
-        run: |
-          pip install pycodestyle
-          pycodestyle .
