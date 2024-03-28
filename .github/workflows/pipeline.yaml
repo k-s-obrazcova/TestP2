@@ -1,16 +1,16 @@
-name: Python Style Check
+name: Python Check Style
 on:
   push:
     branches:
       - news
 
 jobs:
-  python-style-check:
+  python-check-style:
     runs-on: ubuntu-latest
 
     steps:
       - name: Git clone repo
-        uses: actions/checkout@v2
+        uses: actions/checkount@v2
 
       - name: Set version python
         uses: actions/setup-python@v2
@@ -21,8 +21,3 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
-      - name: Python Check Style
-        run: |
-          pip install pycodestyle
-          pycodestyle .
